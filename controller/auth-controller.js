@@ -34,11 +34,13 @@ module.exports = {
     }
 
     if ((bscrypt, bscrypt.compareSync(dataUser.pass, user.dataValues.pass))) {
-      const token = jwt.sign({ email: user.email }, process.env.JWT_KEY);
+      const token = jwt.sign({ 
+        email: user.email,
+        role: role
+     }, process.env.JWT_KEY);
       res.status(200).json({
         message: "berhasil login",
         token: token,
-        role: role
       });
       return;
     }

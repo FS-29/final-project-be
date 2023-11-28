@@ -20,9 +20,16 @@ response
 {
   "message": "",
   "token": "",
-  "role": 2
 }
 ```
+token berisi object email dalam bentuk string dan role dalam bentuk integer
+```
+{
+  email: "",
+  role: 0
+}
+```
+
  
 ## /auth/register [POST]
 
