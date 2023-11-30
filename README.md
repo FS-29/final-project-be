@@ -3,7 +3,9 @@ RESTFUL API espress FInal Project SkilVul
 
 # role:
 1 = pelapor
+
 2 = konselor
+
 3 = admin
 
 ## /auth/login [POST]
@@ -48,3 +50,15 @@ Accept: */*
 User-Agent: Thunder Client (https://www.thunderclient.com)
 Role: 3
 ```
+
+## /profil [GET]
+
+need header bearer token
+
+response all profil user except id and id_user
+
+## /profil/role [GET]
+
+need header bearer token
+
+response role according to #role
