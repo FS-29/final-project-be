@@ -1,4 +1,4 @@
-const { Users, Admins, Profils, Pelapors, Konselors } = require("../models");
+const {Profils} = require("../models");
 
 module.exports = {
     getUserProfil: async (req, res) => {
