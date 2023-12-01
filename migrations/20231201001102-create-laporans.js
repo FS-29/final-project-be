@@ -54,7 +54,6 @@ module.exports = {
         type: Sequelize.DATE
       },
       foto: {
-        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {
