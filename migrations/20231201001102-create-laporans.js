@@ -51,7 +51,7 @@ module.exports = {
       },
       kejadian: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       foto: {
         type: Sequelize.STRING

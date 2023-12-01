@@ -75,7 +75,7 @@ module.exports = {
       attributes: ["id"],
       where: { id_user: userId },
     });
-    console.log(dataValues.id);
+    // console.log(dataValues.id);
     try {
       await Sekolahs.create({
         id_pelapor: dataValues.id,
