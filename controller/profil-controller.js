@@ -8,14 +8,14 @@ module.exports = {
             where:{id_user:userId},
         })
         console.log(dataValues);
-        res.json({
+        res.status(200).json({
             message:"profile user",
             data:dataValues
         })
     },
     getUserRole:async (req,res) => {
         const userRole = req.payload.role
-        res.json({
+        res.status(200).json({
             role:userRole
         })
     }

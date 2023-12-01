@@ -62,3 +62,21 @@ response all profil user except id and id_user
 need header bearer token
 
 response role according to #role
+
+
+
+
+
+```
+{
+  "nama": "",
+  "ponsel": "",
+  "email": "",
+  "prov": "",
+  "kab_kota": "",
+  "kec": "",
+  "desa": "",
+  "kode_pos": "",
+  "alamat":"" 
+}
+```

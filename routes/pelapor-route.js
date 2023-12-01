@@ -1,12 +1,15 @@
 const express = require('express')
+const { getAlamat, getSekolah, addAlamat, addSekolah, editAlamat, editSekolah } = require('../controller/pelapor-controller')
 
-const route =express.Router()
+const route = express.Router()
 
-route.get('/alamat')
-route.get('/sekolah')
-route.post('/alamat')
-route.post('/sekolah')
+route.get('/alamat',getAlamat)
+route.get('/sekolah',getSekolah)
+route.post('/alamat',addAlamat)
+route.post('/sekolah',addSekolah)
+route.put('/alamat',editAlamat)
+route.put('/sekolah',editSekolah)
 
 
 
-module.export = route
+module.exports = route
