@@ -3,10 +3,12 @@ RESTFUL API espress FInal Project SkilVul
 
 # role:
 1 = pelapor
+
 2 = konselor
+
 3 = admin
 
-## /auth/login [POST]
+### /auth/login [POST]
 
 body
 ```
@@ -31,7 +33,7 @@ token berisi object email dalam bentuk string dan role dalam bentuk integer
 ```
 
  
-## /auth/register [POST]
+### /auth/register [POST]
 
 body
 ```
@@ -47,4 +49,49 @@ headers
 Accept: */*
 User-Agent: Thunder Client (https://www.thunderclient.com)
 Role: 3
+```
+
+### /profil [GET]
+
+need header bearer token
+
+response all profil user except id and id_user
+
+### /profil/role [GET]
+
+need header bearer token
+
+response role according to #role
+
+
+
+### /Pelapor/Alamat [GET]
+
+need header bearer token
+
+response data alamat
+
+### /Pelapor/sekolah [GET]
+
+need header bearer token
+
+response data sekolah
+
+### /Pelapor/sekolah [GET]
+
+need header bearer token
+
+req body:
+```
+{
+  "nama": "",
+  "ponsel": "",
+  "email": "",
+  "prov": "",
+  "kab_kota": "",
+  "kec": "",
+  "desa": "",
+  "kode_pos": "",
+  "alamat":"" 
+}
 ```
