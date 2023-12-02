@@ -17,5 +17,6 @@ route.use("/auth",auth_Routes);
 route.use("/profil",verifyToken, profil_Routes)
 route.use("/pelapor",verifyToken, pelapor_Routes)
 route.use("/laporan",verifyToken,laporan_Routes)
+route.post("/upload",)
 
 module.exports = route;

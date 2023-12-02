@@ -82,6 +82,9 @@ module.exports = {
         deskripsi: dataLaporan.deskripsi,
         kejadian: dataLaporan.tglKejadian,
         foto: dataLaporan.bukti,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+
       });
       res.status(201).json({
         message: "berhasil mendambahkan laporan",
