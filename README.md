@@ -77,7 +77,7 @@ need header bearer token
 
 response data sekolah
 
-### /Pelapor/sekolah [GET]
+### /Pelapor/sekolah [POST]
 
 need header bearer token
 
@@ -93,5 +93,71 @@ req body:
   "desa": "",
   "kode_pos": "",
   "alamat":"" 
+}
+```
+
+### /laporan [GET]
+
+just role squad (user pelapor)
+
+need header bearer token
+
+response list of laporan from user
+
+### /laporan/all-user [GET]
+
+just admin 
+
+need header bearer token
+
+response all list of laporan from table laporans
+
+### /laporan [POST]
+
+just role squad (user pelapor)
+
+need header bearer token
+
+req body:
+```
+{
+  "nama": "",
+  "noTlp": "",
+  "prov": "",
+  "kabKota": "",
+  "kec": "",
+  "jenjang": "",
+  "sekolah": "",
+  "tglKejadian": "YYYY-MM-DD",
+  "tingkatan": "",
+  "deskripsi": "",
+  "foto":""
+}
+```
+### /upload/laporan [POST]
+
+upload to laporan folder in cloudinary
+
+req formdata files
+
+res
+```
+{
+  "success": true,
+  "url": {url images}
+}
+```
+
+### /upload/profil [POST]
+
+upload to profil folder in cloudinary
+
+req formdata files
+
+res
+```
+{
+  "success": true,
+  "url": {url images}
 }
 ```

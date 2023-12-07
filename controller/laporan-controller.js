@@ -81,7 +81,10 @@ module.exports = {
         kec: dataLaporan.kec,
         deskripsi: dataLaporan.deskripsi,
         kejadian: dataLaporan.tglKejadian,
-        foto: dataLaporan.bukti,
+        foto: dataLaporan.foto,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+
       });
       res.status(201).json({
         message: "berhasil mendambahkan laporan",
