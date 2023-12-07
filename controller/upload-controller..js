@@ -19,10 +19,10 @@ module.exports = {
         const base64 = `data:image/jpeg;base64,${_base64}`
 
         const cloudinaryRes = await Cloudinary.uploader.upload(base64,{public_id:new Date().getTime(),folder:"laporan"})
-
         res.json({
             success:true,
-            url:cloudinaryRes.secure_url
+            url:cloudinaryRes.secure_url,
+            publicId:cloudinaryRes.public_id
         })
     },
     upImgProfil: async (req, res) => {
@@ -37,9 +37,25 @@ module.exports = {
 
         const cloudinaryRes = await Cloudinary.uploader.upload(base64,{public_id:new Date().getTime(),folder:"profil"})
 
-        res.json({
+        res.status(201).json({
             success:true,
-            url:cloudinaryRes.secure_url
+            url:cloudinaryRes.secure_url,
+            publicId:cloudinaryRes.public_id
         })
+    },
+    delImgLaporan: async (req,res) =>{
+        const idImg = req.body.publicId
+        try {
+            await Cloudinary.uploader.destroy(idImg) 
+            res.status(200).json({
+                success:true
+            })
+        } catch (error) {
+            res.status(400).json({
+                success:false
+            })
+        }
+        
+        
     }
   };
