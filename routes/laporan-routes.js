@@ -8,6 +8,7 @@ route.get('/all-user',getAllLaporan)
 route.get('/:id',getLaporanById)
 route.post('/',addLaporan)
 route.put('/edit',editLaporan)
+route.delete('/')
 
 
 module.exports = route

@@ -10,7 +10,9 @@ module.exports = {
       where: { email: dataUser.email },
     });
     if (user == null) {
-      res.status(400).send("belum regis");
+      res.status(400).json({
+        message: "belum regis",
+      });
       return;
     }
     const pelapor = await Pelapors.findOne({
@@ -33,7 +35,7 @@ module.exports = {
         role=3
     }
 
-    if ((bscrypt, bscrypt.compareSync(dataUser.pass, user.dataValues.pass))) {
+    if (bscrypt, bscrypt.compareSync(dataUser.pass, user.dataValues.pass)) {
       const token = jwt.sign({ 
         email: user.email,
         role: role
@@ -44,7 +46,9 @@ module.exports = {
       });
       return;
     }
-    res.status(401).send("incorect password");
+    res.status(401).json({
+      message: "password salah",
+    });
   },
 
   registerUser: async (req, res) => {
@@ -57,7 +61,9 @@ module.exports = {
     const emailV = await Users.findOne({ where: { email: dataUser.email } });
     console.log(emailV);
     if (emailV) {
-      res.status(409).send("email sudah terdaftar");
+      res.status(409).json({
+        message: "email sudah terdaftar",
+      });
       return;
     }
     try {
@@ -95,20 +101,9 @@ module.exports = {
       }
     } catch (error) {
       console.log(error);
-      res.status(500).send("internal server error");
+      res.status(400).json({
+        message: "gagal register",
+      });
     }
   },
 };
-// const test = await Users.findOne({
-//     include: Admins,
-//     where:{email:dataUser.email}
-// })
-// const test = await Users.findOne({
-//     attributes: ['id'],
-//     where:{email:dataUser.email}
-// })
-// console.log(test.dataValues.id);
-// res.status(200).json({
-//     message:"berhasil mendapatkan data todos dari user",
-//     data:test
-// })

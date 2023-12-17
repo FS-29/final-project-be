@@ -7,7 +7,10 @@ module.exports =
     "database": process.env.DB_DATABASE,
     "host": process.env.DB_HOST,
     "PORT": process.env.DB_PORT,
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "dialectOptions": {
+      "connectTimeout": 60000 // Adjust timeout (in milliseconds) as needed
+    }
   },
   "test": {
     "username": "root",
